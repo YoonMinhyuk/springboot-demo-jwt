@@ -1,0 +1,25 @@
+spring:
+  config:
+    import:
+      - classpath:/oauth2.yml
+
+  datasource:
+    username: sa
+    password:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database: h2
+    database-platform: "org.hibernate.dialect.H2Dialect"
+    generate-ddl: true
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        default_batch_fetch_size: 500
+        format_sql: true
+        use_sql_comments: true
